@@ -1,0 +1,75 @@
+/* Загальний фон сторінки */
+.wrapper {
+    min-height: 100vh;
+    background-color: #0a0a23;
+    /* Темно-синій фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;box-shadow: 0 0 20px 5px hwb(302 4% 38%);
+        /* Жовта підсвітка */
+}
+
+/* Контейнер контенту */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff8dc;
+    /* Ніжний світло-жовтий */
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    
+    animation: fadeInContainer 1.2s ease forwards;
+}
+
+/* Анімація появи */
+@keyframes fadeInContainer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Заголовок */
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0d47a1;
+    /* Темно-синій */
+    margin-bottom: 20px;
+}
+
+/* Текст */
+.text {
+    font-size: 20px;
+    color: #1e3a8a;
+    /* Насичений синій */
+    margin-bottom: 15px;
+}
+
+/* Ефект при наведенні */
+.text:hover {
+    color: #0288d1;
+    transition: color 0.3s ease;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+}

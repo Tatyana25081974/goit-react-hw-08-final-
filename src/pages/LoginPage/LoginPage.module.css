@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.title {
+    font-size: 28px;
+    color: #00cfff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #00cfff, 0 0 10px #00cfff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .title {
+        font-size: 24px;
+    }
+}

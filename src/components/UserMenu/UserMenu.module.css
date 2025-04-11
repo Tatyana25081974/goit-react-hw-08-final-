@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #0a0a23;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+}
+
+.greeting {
+    color: #00cfff;
+    /* бірюзово-синій текст */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #ff4d4d;
+    
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #ff1a1a;
+    
+}
+
+/* Адаптивність для менших екранів */
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

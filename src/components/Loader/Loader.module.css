@@ -1,0 +1,56 @@
+.loaderWrapper {
+    display: flex;
+    flex-direction: column;
+    /* ➔ Вертикальне розміщення */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0a0a0a;
+    /* Чорний фон */
+}
+
+/* Стилі для спінера */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #f3f3f3;
+    /* Світлий колір бази */
+    border-top: 8px solid #00cfff;
+    /* Бірюзовий колір обертання */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+    /* Відступ до тексту */
+}
+
+/* Анімація спінера */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Стилі для тексту */
+.text {
+    font-size: 20px;
+    color: #ffe600;
+    /* Жовтий текст */
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+/* Анімація тексту */
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

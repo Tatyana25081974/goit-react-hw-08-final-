@@ -1,0 +1,94 @@
+.form {
+width: 100%;
+    /* Бере всю ширину свого контейнера */
+    max-width: 450px;
+   
+    padding: 15px;
+    border: 2px solid #ffe600;
+    border-radius: 12px;
+    background-color: #d8e610;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* щоб padding не збільшував ширину */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto;
+    /* Центруємо всередині */
+}
+.label {
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 16px;
+    color: #4207f1;
+}
+
+.input {
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #10d1e6;
+    border: 2px solid #ccc;
+    margin-top: 6px;
+    transition: all 0.3s ease;
+}
+
+.input:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.input:focus {
+    border-color: #00b4d8;
+    outline: none;
+    box-shadow: 0 0 5px #00b4d8;
+}
+
+.input::placeholder {
+    color: #666;
+    font-size: 14px;
+}
+
+.button {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.error {
+    color: crimson;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* 📱 Адаптивність для мобільних */
+@media (max-width: 480px) {
+    .form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}

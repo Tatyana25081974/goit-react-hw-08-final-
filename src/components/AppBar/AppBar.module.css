@@ -1,0 +1,32 @@
+
+.header {
+    width: 100%;
+    background-color: #0a0a23;
+    padding: 15px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        /* ✅ важливо для падінгів */
+        overflow-x: hidden;
+        /* 🛡️ захист від горизонтального скролу */
+    }
+
+
+.nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+        padding: 0 10px;
+    
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
