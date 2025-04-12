@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';  // Імпортуємо функцію для створення store з Redux Toolkit
 import { persistStore, persistReducer } from 'redux-persist'; // Імпортуємо інструменти для збереження store у localStorage
 
-import authReducer from './auth/authSlice'; // Імпортуємо редьюсери (автоматичні оновлювачі стану) для наших частин стану
-import contactsReducer from './contacts/contactsSlice';
-import filterReducer from './filter/filterSlice';
+import authReducer from './auth/slice'; // Імпортуємо редьюсери (автоматичні оновлювачі стану) для наших частин стану
+import contactsReducer from './contacts/slice';
+import filterReducer from './filters/slice';
 
 import { persistAuthConfig } from './auth/persistConfig';
 

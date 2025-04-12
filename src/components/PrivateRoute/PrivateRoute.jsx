@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';  
 // Імпортуємо useSelector — щоб взяти дані зі стану Redux
 
-import { selectIsLoggedIn, selectIsRefreshing } from '../../redux/auth/authSelectors';
+import { selectIsLoggedIn, selectIsRefreshing } from '../../redux/auth/selectors';
 // Імпортуємо селектори:
 // selectIsLoggedIn — чи користувач увійшов у систему
 // selectIsRefreshing — чи зараз оновлюється профіль користувача

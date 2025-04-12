@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'; // Додаємо useNavigate
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { login } from '../../redux/auth/authOps';
+import { login } from '../../redux/auth/operations';
 import styles from './LoginForm.module.css';
 
 const LoginSchema = Yup.object().shape({
