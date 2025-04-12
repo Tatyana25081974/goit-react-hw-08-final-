@@ -4,6 +4,7 @@ import { selectVisibleContacts } from '../../redux/contacts/selectors';
 import Contact from '../Contact/Contact';
 import styles from './ContactList.module.css';
 
+
 export default function ContactList() {
   const contacts = useSelector(selectVisibleContacts);
 

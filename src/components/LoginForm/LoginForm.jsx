@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom'; // Додаємо useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { login } from '../../redux/auth/operations';
 import styles from './LoginForm.module.css';
+import { toast } from 'react-hot-toast';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Невірний email').required("Обов'язкове поле"),
@@ -18,6 +19,7 @@ export default function LoginForm() {
   try {
     await dispatch(login(values)).unwrap();
     actions.resetForm();
+    toast.success('Ласкаво просимо! 🎉');
     navigate('/contacts');
   } catch (error) {
     let errorMessage = "Сталась помилка. Спробуйте ще раз.";
@@ -46,13 +48,13 @@ export default function LoginForm() {
           <Form className={styles.form} autoComplete="off">
             <label className={styles.label}>
               Email
-              <Field name="email" type="email" className={styles.input} />
+              <Field name="email" type="email" className={styles.input} autoComplete="new-email" />
               <ErrorMessage name="email" component="div" className={styles.error} />
             </label>
 
             <label className={styles.label}>
               Пароль
-              <Field name="password" type="password" className={styles.input} />
+              <Field name="password" type="password" className={styles.input} autoComplete="new-password"/>
               <ErrorMessage name="password" component="div" className={styles.error} />
             </label>
 

@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { selectFilter } from '../filter/filterSelectors';
+import { selectFilterName, selectFilterNumber } from '../filters/selectors';
 
 // Вибрати всі контакти зі стану
 export const selectContacts = (state) => state.contacts.items;
@@ -12,13 +12,17 @@ export const selectError = (state) => state.contacts.error;
 
 // Вибрати контакти, які відповідають фільтру
 export const selectVisibleContacts = createSelector(
-  [selectContacts, selectFilter],
-  (contacts, filter) => {
-    if (!filter.trim()) {
-      return contacts;
-    }
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
+  [selectContacts, selectFilterName, selectFilterNumber],
+  (contacts, nameFilter, numberFilter) => {
+    const normalizedName = nameFilter.toLowerCase().trim();
+    const normalizedNumber = numberFilter.trim();
+
+    return contacts.filter(contact => {
+      const nameMatches = contact.name.toLowerCase().includes(normalizedName);
+      const numberMatches = contact.number.includes(normalizedNumber);
+
+      //  або ім'я або номер підходить
+      return nameMatches || numberMatches;
+    });
   }
 );

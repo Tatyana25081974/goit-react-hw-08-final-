@@ -7,6 +7,7 @@ import { selectIsRefreshing } from '../../redux/auth/selectors';
 import RestrictedRoute from '../RestrictedRoute/RestrictedRoute';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import Loader from '../Loader/Loader'; 
+import { Toaster } from 'react-hot-toast'; 
 
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
@@ -25,7 +26,8 @@ export default function App() {
   return isRefreshing ? (
     <Loader />   
   ) : (
-    <Suspense fallback={<Loader />}> 
+      <Suspense fallback={<Loader />}> 
+        <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

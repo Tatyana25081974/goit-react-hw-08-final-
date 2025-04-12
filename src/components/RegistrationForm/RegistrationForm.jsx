@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { register } from '../../redux/auth/operations';
 import styles from './RegistrationForm.module.css';
+import { toast } from 'react-hot-toast'; 
 
 const RegistrationSchema = Yup.object().shape({
   name: Yup.string()
@@ -23,6 +24,8 @@ export default function RegistrationForm() {
   try {
     await dispatch(register(values)).unwrap(); 
     actions.resetForm();
+    toast.success('Реєстрація успішна! 🎉');
+      
   } catch (error) {
     let errorMessage = "Сталася помилка. Спробуйте ще раз.";
 
@@ -50,19 +53,19 @@ export default function RegistrationForm() {
           <Form className={styles.form} autoComplete="off">
             <label className={styles.label}>
               Ім'я
-              <Field name="name" type="text" className={styles.input} />
+              <Field name="name" type="text" className={styles.input} autoComplete="new-name"/>
               <ErrorMessage name="name" component="div" className={styles.error} />
             </label>
 
             <label className={styles.label}>
               Email
-              <Field name="email" type="email" className={styles.input} />
+              <Field name="email" type="email" className={styles.input} autoComplete="new-email"/>
               <ErrorMessage name="email" component="div" className={styles.error} />
             </label>
 
             <label className={styles.label}>
               Пароль
-              <Field name="password" type="password" className={styles.input} />
+              <Field name="password" type="password" className={styles.input} autoComplete="new-password"/>
               <ErrorMessage name="password" component="div" className={styles.error} />
             </label>
 

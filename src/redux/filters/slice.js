@@ -1,17 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  name: '',
+  number: '',
+};
+
 const filterSlice = createSlice({
   name: 'filter',
-  initialState: '', // Спочатку фільтр порожній
+  initialState,
   reducers: {
-    setFilter(state, action) {
-      return action.payload;
+    // окрема дія для зміни імені
+    setNameFilter(state, action) {
+      state.name = action.payload; 
+    },
+    // окрема дія для зміни номера
+    setNumberFilter(state, action) {
+      state.number = action.payload;
     },
   },
 });
 
-// Експортуємо дію (action)
-export const { setFilter } = filterSlice.actions;
 
-// Експортуємо редьюсер
+export const { setNameFilter, setNumberFilter } = filterSlice.actions;
+
 export default filterSlice.reducer;

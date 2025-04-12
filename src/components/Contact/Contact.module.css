@@ -9,7 +9,7 @@
     background: linear-gradient(145deg, #10d1e6, #0a9db5);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     width: 260px;
-    min-height: 180px;
+    min-height: 200px;
     transition: all 0.4s ease;
     animation: fadeIn 0.5s ease forwards;
     box-sizing: border-box;
@@ -28,7 +28,6 @@
     }
 }
 
-
 .item:hover,
 .item:focus {
     transform: scale(1.08);
@@ -43,22 +42,44 @@
     word-break: break-word;
 }
 
+/* Кнопки */
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
 .button {
-    background-color: #1d4ed8;
-    color: #ffffff;
     padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
     font-size: 16px;
     font-weight: bold;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Кнопка редагувати */
+.editButton {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
 
-.button:hover,
-.button:focus {
+.editButton:hover,
+.editButton:focus {
     background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+/* Кнопка видалити */
+.deleteButton {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.deleteButton:hover,
+.deleteButton:focus {
+    background-color: #b91c1c;
     transform: scale(1.05);
 }
 

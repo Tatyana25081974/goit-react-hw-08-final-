@@ -4,17 +4,21 @@
     align-items: center;
     padding: 5px;
     height: 100%;
-    /* Щоб форма заповнювала всю висоту батьківського контейнера */
     box-sizing: border-box;
 }
 
 .subtitle {
     font-size: 24px;
-    color: білий;
+    color: white;
+   
     margin-bottom: 20px;
 }
 
-.searchBox {
+.inputsWrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 
@@ -23,7 +27,7 @@
     flex-direction: column;
     font-size: 16px;
     color: #3c07f9;
-    width: 100%;
+    width: 250px;
 }
 
 .input {
