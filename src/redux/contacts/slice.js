@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact, updateContact } from './operations';
+import { logOut } from '../auth/operations'; // !!! Імпортуємо logOut
 
 const initialState = {
   items: [],       // Список контактів
@@ -70,7 +71,13 @@ const contactsSlice = createSlice({
       .addCase(updateContact.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      });
+      })
+      // ➡️ Додаємо обробку logOut.fulfilled
+      .addCase(logOut.fulfilled, (state) => {
+        state.items = []; //очищаємо state.items = [] — контакти користувача,
+        state.isLoading = false; //ставимо isLoading = false для безпечного стану.
+        state.error = null;//обнуляємо можливу помилку (state.error = null),
+      })
   },
 });
 
